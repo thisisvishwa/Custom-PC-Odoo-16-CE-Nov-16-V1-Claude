@@ -1,0 +1,31 @@
+```xml
+<odoo>
+    <data>
+        <record id="view_configuration_summary_form" model="ir.ui.view">
+            <field name="name">configuration.summary.form</field>
+            <field name="model">configuration.model</field>
+            <field name="arch" type="xml">
+                <form string="Configuration Summary">
+                    <sheet>
+                        <group>
+                            <field name="selectedComponents" widget="many2many_tags"/>
+                            <field name="currentPricing"/>
+                            <field name="compatibilityStatus"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_configuration_summary" model="ir.actions.act_window">
+            <field name="name">Configuration Summary</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">configuration.model</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_configuration_summary_form"/>
+        </record>
+
+        <menuitem id="menu_configuration_summary" name="Configuration Summary" parent="base.menu_custom" sequence="10" action="action_configuration_summary"/>
+    </data>
+</odoo>
+```

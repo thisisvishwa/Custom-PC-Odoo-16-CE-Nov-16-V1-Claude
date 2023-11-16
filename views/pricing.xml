@@ -1,0 +1,49 @@
+```xml
+<odoo>
+    <data>
+        <!-- Pricing View -->
+        <record id="view_pricing_form" model="ir.ui.view">
+            <field name="name">pricing.form</field>
+            <field name="model">pricing.rule</field>
+            <field name="arch" type="xml">
+                <form string="Pricing">
+                    <sheet>
+                        <group>
+                            <field name="component"/>
+                            <field name="price"/>
+                            <field name="discount"/>
+                            <field name="promotion"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Pricing Tree View -->
+        <record id="view_pricing_tree" model="ir.ui.view">
+            <field name="name">pricing.tree</field>
+            <field name="model">pricing.rule</field>
+            <field name="arch" type="xml">
+                <tree string="Pricing">
+                    <field name="component"/>
+                    <field name="price"/>
+                    <field name="discount"/>
+                    <field name="promotion"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Pricing Action -->
+        <record id="action_pricing" model="ir.actions.act_window">
+            <field name="name">Pricing</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pricing.rule</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_pricing_tree"/>
+        </record>
+
+        <!-- Pricing Menu -->
+        <menuitem id="menu_pricing" name="Pricing" parent="base.menu_custom" sequence="10" action="action_pricing"/>
+    </data>
+</odoo>
+```
