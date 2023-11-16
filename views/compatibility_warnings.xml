@@ -1,0 +1,30 @@
+```xml
+<odoo>
+    <data>
+        <record id="view_compatibility_warnings_form" model="ir.ui.view">
+            <field name="name">compatibility.warnings.form</field>
+            <field name="model">compatibility.check</field>
+            <field name="arch" type="xml">
+                <form string="Compatibility Warnings">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_compatibility_warnings" model="ir.actions.act_window">
+            <field name="name">Compatibility Warnings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">compatibility.check</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_compatibility_warnings_form"/>
+        </record>
+
+        <menuitem id="menu_compatibility_warnings" name="Compatibility Warnings" parent="custom_pc_building_module.menu_custom_pc_building" action="action_compatibility_warnings"/>
+    </data>
+</odoo>
+```

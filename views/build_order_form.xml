@@ -1,0 +1,28 @@
+```xml
+<odoo>
+    <data>
+        <record id="view_order_form" model="ir.ui.view">
+            <field name="name">build.order.form</field>
+            <field name="model">build.order</field>
+            <field name="arch" type="xml">
+                <form string="Build Order">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="status"/>
+                        </group>
+                        <notebook>
+                            <page string="Configuration">
+                                <field name="configuration_id"/>
+                            </page>
+                            <page string="Pricing">
+                                <field name="pricing_id"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
+```

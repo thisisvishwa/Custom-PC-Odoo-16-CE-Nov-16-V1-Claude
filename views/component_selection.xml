@@ -1,0 +1,48 @@
+```xml
+<odoo>
+    <data>
+        <record id="view_component_selection_form" model="ir.ui.view">
+            <field name="name">component.selection.form</field>
+            <field name="model">component.selection</field>
+            <field name="arch" type="xml">
+                <form string="Component Selection">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="manufacturer"/>
+                            <field name="specs"/>
+                            <field name="price"/>
+                        </group>
+                        <notebook>
+                            <page string="CPU">
+                                <field name="cpu_id"/>
+                            </page>
+                            <page string="GPU">
+                                <field name="gpu_id"/>
+                            </page>
+                            <page string="RAM">
+                                <field name="ram_id"/>
+                            </page>
+                            <page string="Storage">
+                                <field name="storage_id"/>
+                            </page>
+                            <page string="Motherboard">
+                                <field name="motherboard_id"/>
+                            </page>
+                            <page string="Power Supply">
+                                <field name="power_supply_id"/>
+                            </page>
+                            <page string="Cooling">
+                                <field name="cooling_id"/>
+                            </page>
+                            <page string="Case">
+                                <field name="case_id"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
+```
